@@ -8,6 +8,7 @@
       <th scope="col"> Email </th>
       <th scope="col"> Phone </th>
       <th scope="col"> Twitter </th>
+      <th scope="col"> User Id </th>
       <th scope="col" colspan="3"> CRUD </th>
     </tr>
   </thead>
@@ -15,9 +16,7 @@
   <tbody>
     <% @friends.each do |friend| %>
       <tr>
-        <td>
           <%= render friend %>
-        </td>
       </tr>
     <% end %>
   </tbody>

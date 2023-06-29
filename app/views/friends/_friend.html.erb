@@ -1,7 +1,7 @@
 <div id="<%= dom_id friend %>">
-  <p>
+  <td>
     <%= friend.first_name %>
-  </p>
+  </td>
 
   <td>
     <%= friend.last_name %>
@@ -19,8 +19,11 @@
     <%= friend.twitter %>
   </td>
   <td>
+    <%= friend.user_id %>
+  </td>
+  <td>
     <text><%= link_to "Show", friend, class:"btn btn-secondary"  %></text>
-    <td><%= link_to "Edit NEED FIX", friend, class:"btn btn-secondary" %></td>
-    <td><%= button_to "Destroy NEED FIX", @friend, method: :delete , class:"btn btn-secondary"%></td>
+    <td><%= link_to "Edit", edit_friend_path(friend), class:"btn btn-secondary" %></td>
+    <td><%= button_to "Destroy", friend, method: :delete , class:"btn btn-secondary"%></td>
   </td>
 </div>
