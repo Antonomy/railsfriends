@@ -1,10 +1,6 @@
 <div id="<%= dom_id friend %>">
   <td>
-    <%= friend.first_name %>
-  </td>
-
-  <td>
-    <%= friend.last_name %>
+  <%= link_to friend.first_name + ' ' + friend.last_name, friend, class:"btn btn-secondary"  %>
   </td>
 
   <td>
@@ -21,9 +17,12 @@
   <td>
     <%= friend.user_id %>
   </td>
-  <td>
-    <text><%= link_to "Show", friend, class:"btn btn-secondary"  %></text>
-    <td><%= link_to "Edit", edit_friend_path(friend), class:"btn btn-secondary" %></td>
-    <td><%= button_to "Destroy", friend, method: :delete , class:"btn btn-secondary"%></td>
-  </td>
+
+    <% if friend.user == current_user%>
+  <td><%= link_to "Edit", edit_friend_path(friend), class:"btn btn-secondary" %></td>
+  <td><%= button_to "Destroy", friend, method: :delete , class:"btn btn-secondary"%></td>
+  <%else%>
+  <td></td>
+  <td></td>
+  <%end%>
 </div>
